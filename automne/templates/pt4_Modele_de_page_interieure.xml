@@ -6,8 +6,8 @@
 
 		<meta charset="utf-8" />
 
-		<atm-css-tags files="/css/projet/common.less, /css/libs/jquery.fancybox-1.3.4.css" media="screen, handheld" />
-		<atm-js-tags files="js/libs/jquery-1.10.2.min.js, js/libs/jquery.fancybox-1.3.4.pack.js, /js/projet/jquery.common.js" />		
+		<atm-css-tags files="/css/projet/common.less, /css/libs/jquery.fancybox.css" media="screen, handheld" />
+		<atm-js-tags files="js/libs/jquery-1.10.2.min.js, js/libs/jquery.fancybox.pack.js, /js/projet/jquery.common.js" />		
 		<atm-css-tags files="/css/projet/print.css" media="print" />
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,12 +25,12 @@
 			</atm-function>
 		</block>
 		
-		<atm-setvar vartype="var" varname="context" value="atm-public" />
+		<atm-setvar vartype="var" varname="atmContext" value="atm-public" />
 		<atm-admin>
-			<atm-setvar vartype="var" varname="context" value="atm-admin" />
+			<atm-setvar vartype="var" varname="atmContext" value="atm-admin" />
 		</atm-admin>
 		<atm-edit>
-			<atm-setvar vartype="var" varname="context" value="atm-edit" />
+			<atm-setvar vartype="var" varname="atmContext" value="atm-edit" />
 		</atm-edit>
 		<atm-noadmin>
 			<!-- analytics -->
@@ -41,7 +41,7 @@
 	<atm-if what="{page:self:codename}">
 		<atm-setvar vartype="var" varname="codenameClass" value="{page:self:codename}" />
 	</atm-if>
-	<body class="{var:string:context} {var:string:codenameClass}">
+	<body class="{var:string:atmContext} {var:string:codenameClass}">
 		<a id="top"></a>
 		<header  itemscope="itemscope" itemtype="http://data-vocabulary.org/Organization">
 			<atm-linx type="direct" codename="home">
