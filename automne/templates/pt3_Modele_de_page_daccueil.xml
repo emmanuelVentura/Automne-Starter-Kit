@@ -1,0 +1,88 @@
+<html lang="{page:self:language}" data-page="{page:self:id}">
+	<head>
+
+		<title><atm-title /></title> 
+		<link rel="canonical" href="{page:self:url}"/>
+
+		<meta charset="utf-8" />
+
+		<atm-css-tags files="/css/projet/common.less, /css/libs/jquery.fancybox-1.3.4.css" media="screen, handheld" />
+		<atm-js-tags files="js/libs/jquery-1.10.2.min.js, js/libs/jquery.fancybox-1.3.4.pack.js, /js/projet/jquery.common.js" />		
+		<atm-css-tags files="/css/projet/print.css" media="print" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		
+		<block module="pnews" id="newsRSS" cache="0">
+			<atm-function function="rss" object="{}" selected="1" >
+				<link rel="alternate" type="application/rss+xml" title="{label}" href="{url}" />
+			</atm-function>
+		</block>
+		
+		<atm-setvar vartype="var" varname="context" value="atm-public" />
+		<atm-admin>
+			<atm-setvar vartype="var" varname="context" value="atm-admin" />
+		</atm-admin>
+		<atm-edit>
+			<atm-setvar vartype="var" varname="context" value="atm-edit" />
+		</atm-edit>
+		<atm-noadmin>
+			<!-- analytics -->
+		</atm-noadmin>
+		
+		<atm-meta-tags />
+	</head>
+	<atm-if what="{page:self:codename}">
+		<atm-setvar vartype="var" varname="codenameClass" value="{page:self:codename}" />
+	</atm-if>
+	<body class="{var:string:context} {var:string:codenameClass}">
+		<a id="top"></a>
+		<header  itemscope="itemscope" itemtype="http://data-vocabulary.org/Organization">
+			<atm-linx type="direct" codename="home">
+				<a href="{{href}}" itemprop="url"><img src="/img/projet/logo.png" alt="" itemprop="logo"/></a>
+			</atm-linx>
+			<nav role="navigation">
+				<atm-linx type="sublinks">
+					<selection>
+						<start><nodespec type="codename" value="home" /></start>
+					</selection>
+					<display>
+						<htmltemplate><li><a href="{{href}}" class="nav-link {{currentClass}} {{codename}} {{isParent}}">{{title}}</a></li></htmltemplate>
+						<subleveltemplate><ul>{{sublevel}}</ul></subleveltemplate>
+					</display>
+				</atm-linx>
+			</nav>
+		</header>
+		<section>
+			<atm-clientspace module="standard" id="main" />
+		</section>
+		<aside>
+			<atm-clientspace module="standard" id="aside" />
+		</aside>
+		<section>
+			<atm-clientspace module="standard" id="full-main" />
+		</section>
+		<footer>
+			<atm-linx type="sublinks">
+				<selection>
+					<start><nodespec type="codename" value="footer" /></start>
+				</selection>
+				<display>
+					<htmltemplate><li><a href="{{href}}" class="nav-link {{currentClass}} {{codename}} {{isParent}}">{{title}}</a></li></htmltemplate>
+					<subleveltemplate><ul>{{sublevel}}</ul></subleveltemplate>
+				</display>
+			</atm-linx>
+			<block module="pnews" id="rss" language="fr" >
+				<atm-function function="rss" object="{Actualites}" selected="1">
+					<li><a href="{url}" title="{description}" class="social-link rss" target="_blank" >Fil RSS</a></li>
+				</atm-function>
+			</block>
+		</footer>
+	</body>
+</html>
