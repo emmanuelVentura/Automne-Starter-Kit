@@ -1,6 +1,6 @@
 # Automne Starter Kit
 
-Éléments de démarrage d'un nouveau projet Automne. Ne perdez plus de temps et passer directement à la vitesse supérieure.
+Éléments de démarrage d'un nouveau projet Automne. Ne perdez plus de temps et passez directement à la vitesse supérieure.
 
 ## Librairies complémentaires
 
