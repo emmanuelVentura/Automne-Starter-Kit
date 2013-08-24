@@ -1,6 +1,20 @@
-@import "..//libs/bootstrap/bootstrap.less";
+// = BOOTSTRAP
+// Import du framework Bootstrap
+// Import de la mise en correspondance avec Automne
+// -------------------------------------------------------------
 
+@import "../libs/bootstrap/bootstrap.less";
+@import "./atm2bootstrap.less";
 
+// = DEBUG
+// Penser à commenter l'appel en production
+// -------------------------------------------------------------
+
+@import "./debug.less";
+
+// = HTML5
+// Permet un affichage des blocs sous IE7
+// -------------------------------------------------------------
 
 article, aside, figcaption, figure, footer, header, hgroup, nav, section, address {
 	display: block;

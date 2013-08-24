@@ -1,0 +1,31 @@
+
+
+.debug(@mtext, @mcolor){
+	&:after{
+		.well();
+		background-color:@mcolor;
+		color:#FFF;
+		content:@mtext;
+		line-height:1em;
+		right:0;
+		position:fixed;
+		top:1em;
+	}
+}
+
+
+@media (min-width: @screen-sm) {
+	body{
+		.debug('Small', @brand-primary);
+	}
+}
+@media (min-width: @screen-md) {
+	body{
+		.debug('Medium', @brand-warning);
+	}
+}
+@media (min-width: @screen-lg) {
+	body{
+		.debug('Large', @brand-danger);
+	}
+}
