@@ -16,7 +16,7 @@ Icônes de rangées complémentaires, réalisées par [Automne4you](https://www.
 
 ## Framework CSS
 
-* **Boostrap** version 3 RC2 : http://getbootstrap.com
+* **Boostrap** version 3 : http://getbootstrap.com
 
 
 ## Librairies Javascript
