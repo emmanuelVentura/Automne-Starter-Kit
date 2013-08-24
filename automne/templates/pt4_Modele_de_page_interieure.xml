@@ -42,7 +42,7 @@
 		<atm-setvar vartype="var" varname="codenameClass" value="{page:self:codename}" />
 	</atm-if>
 	<body class="{var:string:atmContext} {var:string:codenameClass}">
-		<a id="top"></a>
+		<a href="#content" id="top" class="sr-only">Allez au contenu</a>
 		<header  itemscope="itemscope" itemtype="http://data-vocabulary.org/Organization">
 			<atm-linx type="direct" codename="home">
 				<a href="{{href}}" itemprop="url"><img src="/img/projet/logo.png" alt="" itemprop="logo"/></a>
@@ -66,11 +66,24 @@
 					<stop><nodespec type="relative" value="self" /></stop>
 				</selection>
 				<display>
-					<htmltemplate><li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{href}}" title="{{jstitle}}" itemprop="url"><span itemprop="title">{{title}}</span></a><span class="divider">/</span></li></htmltemplate>
+					<condition property="id" operator="!=">
+						<value type="nodeproperty" property="id"><nodespec type="relative" value="self" /></value>
+					</condition>
+					<htmltemplate>
+						<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{href}}" title="{{jstitle}}" itemprop="url"><span itemprop="title">{{title}}</span></a><span class="divider">/</span></li>
+					</htmltemplate>
+				</display>
+				<display>
+					<condition property="id" operator="==">
+						<value type="nodeproperty" property="id"><nodespec type="relative" value="self" /></value>
+					</condition>
+					<htmltemplate>
+						<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{href}}" title="{{jstitle}}" itemprop="url"><span itemprop="title">{{title}}</span></a></li>
+					</htmltemplate>
 				</display>
 			</atm-linx>
 		</ul>
-		<section>
+		<section id="content">
 			<atm-clientspace module="standard" id="main" />
 		</section>
 		<aside>

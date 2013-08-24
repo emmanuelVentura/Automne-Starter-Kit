@@ -20,7 +20,7 @@
 		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 		
 		<block module="pnews" id="newsRSS" cache="0">
-			<atm-function function="rss" object="{}" selected="1" >
+			<atm-function function="rss" object="{Actualites}" selected="1" >
 				<link rel="alternate" type="application/rss+xml" title="{label}" href="{url}" />
 			</atm-function>
 		</block>
@@ -42,7 +42,7 @@
 		<atm-setvar vartype="var" varname="codenameClass" value="{page:self:codename}" />
 	</atm-if>
 	<body class="{var:string:atmContext} {var:string:codenameClass}">
-		<a id="top"></a>
+		<a href="#content" id="top" class="sr-only">Allez au contenu</a>
 		<header  itemscope="itemscope" itemtype="http://data-vocabulary.org/Organization">
 			<atm-linx type="direct" codename="home">
 				<a href="{{href}}" itemprop="url"><img src="/img/projet/logo.png" alt="" itemprop="logo"/></a>
@@ -59,7 +59,7 @@
 				</atm-linx>
 			</nav>
 		</header>
-		<section>
+		<section id="content">
 			<atm-clientspace module="standard" id="main" />
 		</section>
 		<aside>
