@@ -10,7 +10,8 @@
 		<atm-js-tags files="js/libs/jquery-1.10.2.min.js, js/libs/jquery.fancybox.pack.js, /js/projet/jquery.common.js" />		
 		<atm-css-tags files="/css/projet/print.css" media="print" />
 		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="/js/libs/html5shiv.js"></script>
+			<script src="/js/libs/respond.min.js"></script>
 		<![endif]-->
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
