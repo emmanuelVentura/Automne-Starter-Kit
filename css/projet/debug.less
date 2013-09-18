@@ -1,5 +1,4 @@
 
-
 .debug(@mtext, @mcolor){
 	&:after{
 		.well();
@@ -12,8 +11,14 @@
 		top:1em;
 	}
 }
-
-
+body {
+	.debug('Mobile', @brand-info);
+}
+@media (min-width: @screen-xs) {
+	body {
+		.debug('Extra small', @brand-success);
+	}
+}
 @media (min-width: @screen-sm) {
 	body{
 		.debug('Small', @brand-primary);
