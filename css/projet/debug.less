@@ -1,14 +1,19 @@
-
 .debug(@mtext, @mcolor){
 	&:after{
 		.well();
+		border-radius: 0;
+		border: none;
 		background-color:@mcolor;
 		color:#FFF;
 		content:@mtext;
 		line-height:1em;
-		right:0;
+		left:0;
 		position:fixed;
-		top:1em;
+		bottom:0;
+		width: 150px;
+		padding: 5px;
+		margin-bottom: 0;
+		text-align: center;
 	}
 }
 body {
